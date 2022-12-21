@@ -20,9 +20,10 @@ time_to_end = datetime.datetime.today().timestamp() + 60*time_to_read
 with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     open(log_file_path, 'ab') as file:
     
-    ser.write(b"at")
+    ser.write(b"at\r")
+    file.write(ser.read(100))
+    ser.write(b"at\r")
     file.write(ser.read(100))
 
-    
     # while datetime.datetime.today().timestamp() < time_to_end:
         # file.write(ser.read(100))
