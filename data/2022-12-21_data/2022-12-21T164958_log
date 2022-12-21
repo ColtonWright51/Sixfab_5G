@@ -1,0 +1,5 @@
+
++QCFG: "rrc",(0-5)
++QCFG: "hsdpacat",(6,8,10-24)
++QCFG: "hsupacat",(5,6)
++QCFG: "pdp/duplicatec

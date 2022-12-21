@@ -1,0 +1,3 @@
++QCFG: "sms_control",(0,1),(0,1)
++QCFG: "call_control",(0,1),(0,1)
++QCFG: "usb/maxpower",(0-900)

@@ -1,0 +1,21 @@
++QCFG: "div_test_mode",(0,1)
++QCFG: "data_interface",(0,1),(0,1)
++QCFG: "pcie/mode",(0,1)
++QCFG: "pcie_mbim",(0,1)
++QCFG: "sms_control",(0,1),(0,1)
++QCFG: "call_control",(0,1),(0,1)
++QCFG: "usb/maxpower",(0-900)
++QCFG: "efratctl",(0,1)
++QCFG: "gatewayset",(0,1)[,<gateway>]
++QCFG: "netmaskset",(0,1)[,<netmask>]
++QCFG: "mmwave",ant_chip,ant_type
++QCFG: "clat",(0,1),(0,1),<prefix>,(0,32,40,48,56,64,96),<fqdn>,(0,1),(0,1,2,4,8),(0,1),(0,1),(0,1,2),(0,1,2)
++QCFG: "usage/apmem"
++QCFG: "enable_gea1"[,(0,1)]
++QCFG: "dhcppktfltr",(0,1)
+
+OK
+AT+CIMI=?
+OK
+AT+CIMI
++CME ERROR: 3
