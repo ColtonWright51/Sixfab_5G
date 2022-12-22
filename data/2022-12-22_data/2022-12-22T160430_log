@@ -1,0 +1,82 @@
+AT&F0ATE1
+ERROR
+ATI
+Quectel
+RM502Q-AE
+Revision: RM502QAEAAR11A04M4G
+
+OK
+AT+GMI
+Quectel
+
+OK
+AT+GMM
+RM502Q-AE
+
+OK
+AT+GSN
+867826050652544
+
+OK
+AT&V
+&C: 1
+&D: 2
+&F: 0
+&W: 0
+E: 1
+Q: 0
+V: 1
+X: 4
+Z: 0
+S0: 0
+S3: 13
+S4: 10
+S5: 8
+S6: 2
+S7: 0
+S8: 2
+S10: 15
+
+OK
+AT+QCFG=?
++QCFG: "rrc",(0-5)
++QCFG: "hsdpacat",(6,8,10-24)
++QCFG: "hsupacat",(5,6)
++QCFG: "pdp/duplicatechk",(0,1)
++QCFG: "risignaltype",("respective","physical")
++QCFG: "lte/bandprior",(1-43),(1-43),(1-43)
++QCFG: "volte_disable",(0,1)
++QCFG: "diversity/config",(4,6),(1-4),(0)
++QCFG: "div_test_mode",(0,1)
++QCFG: "data_interface",(0,1),(0,1)
++QCFG: "pcie/mode",(0,1)
++QCFG: "pcie_mbim",(0,1)
++QCFG: "sms_control",(0,1),(0,1)
++QCFG: "call_control",(0,1),(0,1)
++QCFG: "usb/maxpower",(0-900)
++QCFG: "efratctl",(0,1)
++QCFG: "gatewayset",(0,1)[,<gateway>]
++QCFG: "netmaskset",(0,1)[,<netmask>]
++QCFG: "mmwave",ant_chip,ant_type
++QCFG: "clat",(0,1),(0,1),<prefix>,(0,32,40,48,56,64,96),<fqdn>,(0,1),(0,1,2,4,8),(0,1),(0,1),(0,1,2),(0,1,2)
++QCFG: "usage/apmem"
++QCFG: "enable_gea1"[,(0,1)]
++QCFG: "dhcppktfltr",(0,1)
+
+OK
+AT+CIMI=?
+OK
+AT+QSIMSTAT?
++QSIMSTAT: 0,0
+
+OK
+AT+QSIMDET=1,0
+OK
+AT+QSIMSTAT=0
+OK
+AT+QSIMSTAT?
++QSIMSTAT: 0,0
+
+OK
+AT+CSIM=10,"80F2010112"
++CME ERROR: 0
