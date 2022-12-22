@@ -1,4 +1,5 @@
 """
+Created by Colton Wright on 12/21/2022
 Communicates to the Quectel RM502Q-AE modem through a serial port. The modem
 uses the standard "Hayes command set" popular with modems.
 
@@ -21,6 +22,7 @@ time_to_end = datetime.datetime.today().timestamp() + 60*time_to_read
 with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     open(log_file_path, 'ab') as file:
     
+
     # All commands must start with AT or at and end with carriage return!
 
     # Reset AT command settings to factory settings
@@ -32,7 +34,6 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     ser.write(b"ATE1\r")
     file.write(ser.read(100))
     time.sleep(.3)
-
 
     # Display MT identification information
     ser.write(b"ATI\r")
@@ -80,4 +81,3 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     ser.write(b"AT+CIMI\r")
     file.write(ser.read(100))
     time.sleep(.3)
-

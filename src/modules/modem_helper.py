@@ -2,10 +2,6 @@ import os
 import datetime
 
 
-def hello_world():
-    print("hello_world")
-
-
 def make_data_file():
     now = datetime.datetime.today()
     now = now.strftime("%Y-%m-%d")
