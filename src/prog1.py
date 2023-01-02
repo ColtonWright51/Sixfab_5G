@@ -77,7 +77,6 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     time.sleep(.3)
     file.write(ser.read(100))
 
-
     # Query for (U)SIM card status report
     ser.write(b"AT+QSIMSTAT?\r")
     time.sleep(.3)
@@ -111,10 +110,14 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     time.sleep(.3)
     file.write(ser.read(100))
 
-
     # Query for (U)SIM card status report
     ser.write(b"AT+QSIMSTAT?\r")
     time.sleep(.3)
+    file.write(ser.read(100))
+
+    #Reset
+    ser.write(b"AT+CFUN=1,1")
+    time.sleep(15)
     file.write(ser.read(100))
 
     # Enable (U)SIM card detection
@@ -127,9 +130,40 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     time.sleep(.3)
     file.write(ser.read(100))
 
-
-
     # Enable (U)SIM card detection
     ser.write(b"AT+QSIMDET=?\r")
     time.sleep(.3)
     file.write(ser.read(100))
+
+    # 
+    ser.write(b"AT+CPIN?\r")
+    time.sleep(.3)
+    file.write(ser.read(100))
+
+    # 
+    ser.write(b"AT+CPIN?\r")
+    time.sleep(.3)
+    file.write(ser.read(100))
+
+    # 
+    ser.write(b"AT+CPIN=1234\r")
+    time.sleep(.3)
+    file.write(ser.read(100))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
