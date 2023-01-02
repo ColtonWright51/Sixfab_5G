@@ -47,16 +47,17 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     time.sleep(.3)
     file.write(ser.read(100))
 
+    ser.write(b"AT+QINISTAT\r")
+    time.sleep(.3)
+    file.write(ser.read(100))
+
     ser.write(b"AT+CPIN?\r")
     time.sleep(.3)
     file.write(ser.read(100))
 
-    ser.write(b"AT+CFUN=1,1\r")
-    time.sleep(15)
-    file.write(ser.read(100))
-
-
-
+    # ser.write(b"AT+CFUN=1,1\r")
+    # time.sleep(15)
+    # file.write(ser.read(100))
 
 
     time.sleep(.3)
