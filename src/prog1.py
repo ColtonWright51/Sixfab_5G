@@ -26,7 +26,7 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     # All commands must start with AT or at and end with carriage return!
 
     # Reset AT command settings to factory settings
-    ser.write(b"AT&F0")
+    ser.write(b"AT&F0\r")
     time.sleep(.3)
     file.write(ser.read(100))
 
