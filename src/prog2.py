@@ -1,5 +1,5 @@
 """
-Created by Colton Wright on 12/21/2022
+Created by Colton Wright on 12/
 Communicates to the Quectel RM502Q-AE modem through a serial port. The modem
 uses the standard "Hayes command set" popular with modems.
 
@@ -55,9 +55,9 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     time.sleep(.3)
     file.write(ser.read(100))
 
-    # ser.write(b"AT+CFUN=1,1\r")
-    # time.sleep(15)
-    # file.write(ser.read(100))
+    ser.write(b"'AT+QGPS=1\r'")
+    time.sleep(15)
+    file.write(ser.read(100))
 
 
     time.sleep(.3)
