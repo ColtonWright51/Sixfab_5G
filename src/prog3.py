@@ -24,11 +24,22 @@ time_to_end = datetime.datetime.today().timestamp() + 60*time_to_read
 
 with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     open(log_file_path, 'ab') as file:
-    
 
     # All commands must start with AT or at and end with carriage return!
 
-    # Reset AT command settings to factory settings
-    ser.write(b"AT&F0\r")
+    # Returns the network registration status and returns the status of 
+    # result code presentation and an integer <stat> which shows whether the
+    # network has currently indicated the registration of MT
+    # (Mobile Terminal). Location information parameters <lac> and <ci> are 
+    # returned only when <n>=2 and MT is registered on the network.
+    ser.write(b"AT+CREG?\r")
+    time.sleep(.3)
+    file.write(ser.read(100))
+
+    # This command indicates the received signal strength <RSSI> and the 
+    # channel bit error rate <ber>. This Test Command returns values supported
+    # by MT. This Execution Command returns received signal strength
+    # indication <RSSI> and channel bit error rate <ber> from MT.
+    ser.write(b"AT+CSQ\r")
     time.sleep(.3)
     file.write(ser.read(100))
