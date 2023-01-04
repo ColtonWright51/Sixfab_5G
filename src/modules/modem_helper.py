@@ -22,7 +22,6 @@ def automate_test_read(ser, file, command, is_read_com=True, t_sleep=0.3):
 
     # This will give errors if command does not exist. Just will have
     # another error in the text file, it's fine.
-
     if(is_read_com):
         ser.write(bin_command + b"?\r")
         time.sleep(t_sleep)

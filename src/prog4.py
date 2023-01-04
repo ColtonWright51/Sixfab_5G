@@ -88,7 +88,7 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
 
 
     # Section 5 Network Service Commands
-    modem_helper.automate_test_read(ser, file, "AT+COPS", True, 180)
+    modem_helper.automate_test_read(ser, file, "AT+COPS", True, t_sleep = 180)
     modem_helper.automate_test_read(ser, file, "AT+CREG")
     modem_helper.automate_test_read(ser, file, "AT+CGREG")
     modem_helper.automate_test_read(ser, file, "AT+CEREG")

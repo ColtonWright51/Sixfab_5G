@@ -29,8 +29,6 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     # Section 2 General Commands    
     modem_helper.automate_test_read(ser, file, "ATI", is_read_com=False)
 
-\
-
     # This will give errors if command does not exist. Just will have
     # another error in the text file, it's fine.
     # modem_helper.automate_test_read(ser, file, "AT+GMI")
