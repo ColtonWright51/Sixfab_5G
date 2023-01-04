@@ -1,0 +1,6 @@
+AT+COPS?
++COPS: 0
+
+OK
+AT+CPIN?
++CME ERROR: 10

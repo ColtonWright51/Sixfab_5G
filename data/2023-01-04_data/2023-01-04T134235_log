@@ -1,0 +1,6 @@
+AT+COPS=?
++COPS: (1,"AT&T","AT&T","310410",7),(1,"Verizon","Verizon","311480",7),(1,"311 490","311 490","311490",7),(1,"FirstNet","FirstNet","313100",7),(1,"T-Mobile","T-Mobile","310260",7),,(0-4),(0-2)
+
+OK
+AT+CPIN?
++CME ERROR: 10
