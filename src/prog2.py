@@ -1,7 +1,11 @@
 """
 Created by Colton Wright on 12/
 Communicates to the Quectel RM502Q-AE modem through a serial port. The modem
-uses the standard "Hayes command set" popular with modems.
+uses the standard "Hayes command set" popular with modems. This program
+attempts to connect to the internet using the commands given in the sixfab
+documentation below.
+
+https://docs.sixfab.com/page/5g-lte-cellular-connectivity
 
 https://en.wikipedia.org/wiki/Hayes_command_set
 
@@ -35,10 +39,12 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     time.sleep(.3)
     file.write(ser.read(100))
 
+    # Edit extended config settings.
     ser.write(b"AT+QCFG=\"usbnet\",1\r")
     time.sleep(.3)
     file.write(ser.read(100))
 
+    # Define PDP contexts
     ser.write(b"AT+CGDCONT=1,\"IPV4V6\",\"NXTGENPHONE\"\r")
     time.sleep(.3)
     file.write(ser.read(100))
