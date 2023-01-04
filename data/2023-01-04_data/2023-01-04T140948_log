@@ -1,0 +1,8 @@
+AT+CNUM?
+ERROR
+AT+QPINC?
++CME ERROR: 10
+AT+QPINC=?
++QPINC: ("SC","P2")
+
+OK

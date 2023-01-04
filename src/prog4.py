@@ -25,33 +25,18 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
 
     # All commands must start with AT or at and end with carriage return!
 
-
-    ser.write(b"AT+COPS=?\r")
-    time.sleep(180)
-    file.write(ser.read(100))
-    file.write(ser.read(100))
-    file.write(ser.read(100))
-    file.write(ser.read(100))
-
-
-    # MT returns an alphanumeric string indicating whether or not a password
-    # is required.
-    ser.write(b"AT+CPIN?\r")
-    time.sleep(.3)
-    file.write(ser.read(100))
-
-    # ser.write(b"AT+CNUM?\r")
-    # time.sleep(.3)
-    # file.write(ser.read(100))
-
-    # ser.write(b"AT+COPS?\r")
-    # time.sleep(.3)
-    # file.write(ser.read(100))
-
-    # ser.write(b"AT+CPIN?\r")
-    # time.sleep(.3)
-    # file.write(ser.read(100))
-
-    # ser.write(b"AT+CPIN?\r")
-    # time.sleep(.3)
-    # file.write(ser.read(100))
+    modem_helper.automate_test_read(ser, file, "CIMI")
+    modem_helper.automate_test_read(ser, file, "CLCK", 5)
+    modem_helper.automate_test_read(ser, file, "CPIN", 5)
+    modem_helper.automate_test_read(ser, file, "CPWD", 5)
+    modem_helper.automate_test_read(ser, file, "CSIM")
+    modem_helper.automate_test_read(ser, file, "CRSM")
+    modem_helper.automate_test_read(ser, file, "CCHO")
+    modem_helper.automate_test_read(ser, file, "CCHC")
+    modem_helper.automate_test_read(ser, file, "CGLA")
+    modem_helper.automate_test_read(ser, file, "QPINC")
+    modem_helper.automate_test_read(ser, file, "QINSTAT")
+    modem_helper.automate_test_read(ser, file, "QSIMDET")
+    modem_helper.automate_test_read(ser, file, "QSIMSTAT")
+    modem_helper.automate_test_read(ser, file, "QUIMSLOT")
+    
