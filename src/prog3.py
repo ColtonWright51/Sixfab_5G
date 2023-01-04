@@ -57,3 +57,12 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     ser.write(b"AT+QNWINFO\r")
     time.sleep(.3)
     file.write(ser.read(100))
+
+    # This command searches nearby LTE cells and 5G NR cells.
+    # [+QSCAN: "LTE",<MCC>,<MNC>,<freq>,<PCI>,<RSRP>,<RSRQ>,<srxlev>,<squal>[,<cellID>,<TAC>]
+    ser.write(b"AT+QSCAN=1,1\r")
+    time.sleep(180)
+    file.write(ser.read_until(b"OK"))
+    # This command does find many different cells. 13 cells.
+
+    
