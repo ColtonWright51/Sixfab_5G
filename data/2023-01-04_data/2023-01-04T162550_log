@@ -1,0 +1,124 @@
+ATI=?Quectel
+RM502Q-AE
+Revision: RM502QAEAAR11A04M4G
+4ATI?Quectel
+RM502Q-AE
+Revision: RM502QAEAAR11A04M4G
+4AT+GMI=?0AT+GMI?4AT+GMM=?0AT+GMM?4AT+GMR=?0AT+GMR?4AT+CGMI=?0AT+CGMI?4AT+CGMM=?0AT+CGMM?4AT+CGMR=?0AT+CGMR?4AT+GSN=?0AT+GSN?4AT+CGSN=?0AT+CGSN?4AT&V=?&C: 1
+&D: 2
+&F: 0
+&W: 0
+E: 1
+Q: 0
+V: 0
+X: 4
+Z: 0
+S0: 0
+S3: 13
+S4: 10
+S5: 8
+S6: 2
+S7: 0
+S8: 2
+S10: 15
+4AT&V?&C: 1
+&D: 2
+&F: 0
+&W: 0
+E: 1
+Q: 0
+V: 0
+X: 4
+Z: 0
+S0: 0
+S3: 13
+S4: 10
+S5: 8
+S6: 2
+S7: 0
+S8: 2
+S10: 15
+4ATQ=?4ATQ?4ATV=?4ATV?4ATE=?4ATE?4AT+CFUN=?+CFUN: (0,1,4),(0,1)
+0AT+CFUN?+CFUN: 1
+0AT+CMEE=?+CMEE: (0-2)
+0AT+CMEE?+CMEE: 1
+0AT+CSCS=?+CSCS: ("IRA","GSM","UCS2")
+0AT+CSCS?4AT+QURCCFG=?+QURCCFG: "urcport",("usbat","usbmodem","uart1","all")
+0AT+QURCCFG?4AT+QMBNCFG=?+QMBNCFG: "list",<slot>
++QMBNCFG: "Select",<MBN name>,<slot>
++QMBNCFG: "Deactivate",<slot>
++QMBNCFG: "AutoSel",(0,1),<slot>
++QMBNCFG: "Delete",<MBN name>
++QMBNCFG: "Add",<filename>
+0AT+QMBNCFG?4AT+CPAS=?+CPAS: (0,3,4)
+0AT+CPAS?4AT+CEER=?0AT+CEER?4AT+QCFG=?
++QCFG: "rrc",(0-5)
++QCFG: "hsdpacat",(6,8,10-24)
++QCFG: "hsupacat",(5,6)
++QCFG: "pdp/duplicatechk",(0,1)
++QCFG: "risignaltype",("respective","physical")
++QCFG: "lte/bandprior",(1-43),(1-43),(1-43)
++QCFG: "volte_disable",(0,1)
++QCFG: "diversity/config",(4,6),(1-4),(0)
++QCFG: "div_test_mode",(0,1)
++QCFG: "data_interface",(0,1),(0,1)
++QCFG: "pcie/mode",(0,1)
++QCFG: "pcie_mbim",(0,1)
++QCFG: "sms_control",(0,1),(0,1)
++QCFG: "call_control",(0,1),(0,1)
++QCFG: "usb/maxpower",(0-900)
++QCFG: "efratctl",(0,1)
++QCFG: "gatewayset",(0,1)[,<gateway>]
++QCFG: "netmaskset",(0,1)[,<netmask>]
++QCFG: "mmwave",ant_chip,ant_type
++QCFG: "clat",(0,1),(0,1),<prefix>,(0,32,40,48,56,64,96),<fqdn>,(0,1),(0,1,2,4,8),(0,1),(0,1),(0,1,2),(0,1,2)
++QCFG: "usage/apmem"
++QCFG: "enable_gea1"[,(0,1)]
++QCFG: "dhcppktfltr",(0,1)
+0AT+QCFG?0AT+QINDCFG=?+QINDCFG: "all",(0,1),(0,1)
++QINDCFG: "csq",(0,1),(0,1)
++QINDCFG: "smsfull",(0,1),(0,1)
++QINDCFG: "ring",(0,1),(0,1)
++QINDCFG: "smsincoming",(0,1),(0,1)
++QINDCFG: "act",(0,1),(0,1)
+0AT+QINDCFG?4AT+CIMI=?0AT+CIMI?4AT+CLCK=?+CLCK: ("AB","AC","AG","AI","AO","IR","OI","OX","SC","FD","PN","PU","PP","PC","PF")
+0AT+CLCK?4AT+CPIN=?0AT+CPIN?+CME ERROR: 10
+AT+CPWD=?+CPWD: ("AB",4),("AC",4),("AG",4),("AI",4),("AO",4),("IR",4),("OI",4),("OX",4),("SC",8),("P2",8)
+0AT+CPWD?4AT+CSIM=?0AT+CSIM?4AT+CRSM=?0AT+CRSM?4AT+CCHO=?0AT+CCHO?4AT+CCHC=?0AT+CCHC?4AT+CGLA=?0AT+CGLA?4AT+QPINC=?+QPINC: ("SC","P2")
+0AT+QPINC?+CME ERROR: 10
+AT+QINSTAT=?4AT+QINSTAT?4AT+QSIMDET=?+QSIMDET: (0,1),(0,1)
+0AT+QSIMDET?+QSIMDET: 1,0
+0AT+QSIMSTAT=?+QSIMSTAT: (0,1)
+0AT+QSIMSTAT?+QSIMSTAT: 0,0
+0AT+QUIMSLOT=?+QUIMSLOT: (1,2)
+0AT+QUIMSLOT?+QUIMSLOT: 1
+0AT+COPS=?+COPS: (1,"AT&T","AT&T","310410",7),(1,"Verizon","Verizon","311480",7),(1,"T-Mobile","T-Mobile","310260",7),(1,"311 490","311 490","311490",7),(1,"FirstNet","FirstNet","313100",7),,(0-4),(0-2)
+0AT+COPS?+COPS: 0
+0AT+CREG=?+CREG: (0-2)
+0AT+CREG?+CREG: 0,0
+0AT+CGREG=?+CGREG: (0-2)
+0AT+CGREG?+CGREG: 0,0
+0AT+CEREG=?+CEREG: (0-2)
+0AT+CEREG?+CEREG: 0,0
+0AT+C5GREG=?+C5GREG: (0-2)
+0AT+C5GREG?+C5GREG: 0,0
+0AT+CGDCONT=?+CGDCONT: (1-42),"IP",,,(0-3),(0-4),(0-1),(0-1),,,,,,,,,(0-1),,(0-1),,,(0-1)
++CGDCONT: (1-42),"PPP",,,(0-3),(0-4),(0-1),(0-1),,,,,,,,,(0-1),,(0-1),,,(0-1)
++CGDCONT: (1-42),"IPV6",,,(0-3),(0-4),(0-1),(0-1),,,,,,,,,(0-1),,(0-1),,,(0-1)
++CGDCONT: (1-42),"IPV4V6",,,(0-3),(0-4),(0-1),(0-1),,,,,,,,,(0-1),,(0-1),,,(0-1)
+0AT+CGDCONT?+CGDCONT: 1,"IPV4V6","NXTGENPHONE","0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0",0,0,0,0,,,,,,,,,"",,,,0
++CGDCONT: 2,"IPV4V6","ims","0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0",0,0,0,0,,,,,,,,,"",,,,0
++CGDCONT: 3,"IPV4V6","SOS","0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0",0,0,0,1,,,,,,,,,"",,,,0
+0AT+C5GNSSAI=?+C5GNSSAI: (0-64),(00-FF).(00-FFFFFF);(00-FF).(00-FFFFFF):(00-FF).(00-FFFFFF);(00-FF).(00-FFFFFF)
+
+0AT+C5GNSSAI?4AT+C5GNSSAIRDP=?+C5GNSSAIRDP: (0-3),(00101-999999)
+
+0AT+C5GNSSAIRDP?4AT+CSQ=?+CSQ: (0-31,99),(0-7,99)
+0AT+CSQ?+CME ERROR: 3
+AT+QRSRP=?0AT+QRSRP?4AT+QRSRQ=?0AT+QRSRQ?4AT+QSINR=?0AT+QSINR?4AT+CPOL=?+CME ERROR: 13
+AT+CPOL?4AT+COPN=?0AT+COPN?4AT+CTZU=?+CTZU: (0,1)
+0AT+CTZU?+CTZU: 1
+0AT+CTZR=?+CTZR: (0-2)
+0AT+CTZR?+CTZR: 0
+0AT+QLTS=?+QLTS: (0-2)
+0AT+QLTS?4AT+QNWINFO=?0AT+QNWINFO?4

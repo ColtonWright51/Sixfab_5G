@@ -17,8 +17,8 @@ import time
 # Setup data directory & file name to save responses from modem
 log_file_path = modem_helper.make_data_file()
 
-time_to_read = .1
-time_to_end = datetime.datetime.today().timestamp() + 60*time_to_read
+start_time = time.time()
+
 
 with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     open(log_file_path, 'ab') as file:
@@ -29,7 +29,7 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
 
     # Section 2 General Commands    
     modem_helper.automate_test_read(ser, file, "ATI")
-    modem_helper.automate_test_read(ser, file, "AT+CMI")
+    modem_helper.automate_test_read(ser, file, "AT+GMI")
     modem_helper.automate_test_read(ser, file, "AT+GMM")
     modem_helper.automate_test_read(ser, file, "AT+GMR")
     modem_helper.automate_test_read(ser, file, "AT+CGMI")
@@ -113,3 +113,6 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     modem_helper.automate_test_read(ser, file, "AT+QSCAN", False, 180)
     modem_helper.automate_test_read(ser, file, "AT+QNWCFG")
     modem_helper.automate_test_read(ser, file, "AT+QNWPREFCFG")
+
+
+print("Runtime: ", (time.time()-start_time))

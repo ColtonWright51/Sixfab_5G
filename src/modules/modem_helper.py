@@ -18,12 +18,7 @@ def automate_test_read(ser, file, command, is_read_com=True, t_sleep=0.3):
     bin_command = command.encode("ascii")
     ser.write(bin_command + b"=?\r")
     time.sleep(t_sleep)
-    file.write(ser.read(100))
-    file.write(ser.read(100))
-    file.write(ser.read(100))
-    file.write(ser.read(100))
-    file.write(ser.read(100))
-    file.write(ser.read(100))
+    file.write(ser.read(ser.in_waiting))
 
     # This will give errors if command does not exist. Just will have
     # another error in the text file, it's fine.
@@ -31,9 +26,4 @@ def automate_test_read(ser, file, command, is_read_com=True, t_sleep=0.3):
     if(is_read_com):
         ser.write(bin_command + b"?\r")
         time.sleep(t_sleep)
-        file.write(ser.read(100))
-        file.write(ser.read(100))
-        file.write(ser.read(100))
-        file.write(ser.read(100))
-        file.write(ser.read(100))
-        file.write(ser.read(100))
+        file.write(ser.read(ser.in_waiting))
