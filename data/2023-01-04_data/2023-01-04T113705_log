@@ -1,0 +1,14 @@
+AT+CREG?
++CREG: 0,0
+
+OK
+AT+CSQ
++CSQ: 17,99
+
+OK
+AT+QRSRP
+ERROR
+AT+QNWINFO
++QNWINFO: No Service
+
+OK

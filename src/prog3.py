@@ -39,7 +39,21 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     # This command indicates the received signal strength <RSSI> and the 
     # channel bit error rate <ber>. This Test Command returns values supported
     # by MT. This Execution Command returns received signal strength
-    # indication <RSSI> and channel bit error rate <ber> from MT.
+    # indication <RSSI> and channel bit error rate <ber> from MT. Gives
+    # signal strength in -dBm format, power ratio in decibels of measured
+    # power referenced to one milliwatt. Weak signal in the lab.
     ser.write(b"AT+CSQ\r")
+    time.sleep(.3)
+    file.write(ser.read(100))
+
+    # The command queries and reports the RSRP of the current service network.
+    # No service network available because there is no registered (U)SIM card.
+    ser.write(b"AT+QRSRP\r")
+    time.sleep(.3)
+    file.write(ser.read(100))
+
+    # This command queries network information such as access technology
+    # selected, the operator and the band selected.
+    ser.write(b"AT+QNWINFO\r")
     time.sleep(.3)
     file.write(ser.read(100))
