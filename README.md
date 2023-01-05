@@ -28,3 +28,5 @@ This command should now return a 7, meaning:
 - CPIN READY. Operation like locking/unlocking PIN is allowed.
 - SMS DONE. SMS initialization completed.
 - PB DONE. Phonebook initialization completed.
+
+`AT+QINISTAT` can tell you that the (U)SIM is ready, but if you query if the (U)SIM is detected with `AT+QSIMDET?` it will always tell you that (U)SIM card detection is disabled and the insert level is low.

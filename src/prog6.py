@@ -70,7 +70,7 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     modem_helper.automate_com(ser, file, "AT+QUIMSLOT?")
     modem_helper.automate_com(ser, file, "AT+QUIMSLOT=1")
 
-
-
-
+    modem_helper.automate_com(ser, file, "AT+QSIMDET=1,0")
+    modem_helper.automate_com(ser, file, "AT+QSIMDET?")
+    modem_helper.automate_com(ser, file, "AT+QINISTAT")
 print("Runtime: " + str(time.time()-start_time))
