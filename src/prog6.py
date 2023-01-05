@@ -1,7 +1,8 @@
 """
 Created by Colton Wright on 1/4/2023
 Communicates to the Quectel RM502Q-AE modem through a serial port. The modem
-uses the standard "Hayes command set" popular with modems. Show nearly all commands
+uses the standard "Hayes command set" popular with modems. Attempt 
+initialize the (U)SIM card in the modem.
 
 https://en.wikipedia.org/wiki/Hayes_command_set
 
@@ -26,48 +27,28 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     # All commands must start with AT or at and end with carriage return!
     modem_helper.automate_com(ser, file, "ATE1") # Enable echo
 
-    # SECTION 2 GENERAL COMMANDS
     modem_helper.automate_com(ser, file, "ATI")
 
-    modem_helper.automate_com(ser, file, "AT+GMI")
 
-    modem_helper.automate_com(ser, file, "AT+GMM")
-
-    modem_helper.automate_com(ser, file, "AT+GMR")
-
-    modem_helper.automate_com(ser, file, "AT+CGMI")
-
-    modem_helper.automate_com(ser, file, "AT+CGMM")
-    modem_helper.automate_com(ser, file, "AT+CGMR")
-
+    # Request International Mobile Equipment Identity (IMEI) number of the
+    # Mobile Equipemnt (ME)
     modem_helper.automate_com(ser, file, "AT+GSN")
-    modem_helper.automate_com(ser, file, "AT+CGSN")
-    modem_helper.automate_com(ser, file, "AT&V")
 
-    modem_helper.automate_com(ser, file, "AT+CFUN=?", t_sleep=15)
+    # Check for full functionality level. Should give a 1.
     modem_helper.automate_com(ser, file, "AT+CFUN?", t_sleep=15)
 
 
 
-    # SECTION 3 STATUS CONTROL COMMANDS
-    modem_helper.automate_com(ser, file, "AT+CPAS=?")
+    # Queries the activity status of the Mobile Equipment, 0 = Ready
     modem_helper.automate_com(ser, file, "AT+CPAS")
-
-    modem_helper.automate_com(ser, file, "AT+CEER=?")
-    modem_helper.automate_com(ser, file, "AT+CEER") # Error if there is any error related to MT functionality
 
 
     # This command queries and configures various settings of User Equipment (UE).
     modem_helper.automate_com(ser, file, "AT+QCFG=?")
 
-    # This command specifies the High Speed Downlink Packet Access (HSDPA) category.
-    # Category 6, 8, 10, 12, 14, 18, 20 and 24 available
-    # modem_helper.automate_com(ser, file, "AT+QINDCFG")
 
 
 
-
-    # SECTION 4 (U)SIM COMMANDS
 
     # This command requests the International Mobile Subscriber Identity 
     # (IMSI) which is intended to permit the TE to identify the individual

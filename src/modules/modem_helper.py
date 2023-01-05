@@ -26,3 +26,10 @@ def automate_test_read(ser, file, command, is_read_com=True, t_sleep=0.3):
         ser.write(bin_command + b"?\r")
         time.sleep(t_sleep)
         file.write(ser.read(ser.in_waiting))
+
+def automate_com(ser, file, command, t_sleep=0.3):
+    # Send faster command
+    bin_command = command.encode("ascii")
+    ser.write(bin_command + b"\r")
+    time.sleep(t_sleep)
+    file.write(ser.read(ser.in_waiting))
