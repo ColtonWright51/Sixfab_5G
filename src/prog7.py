@@ -46,6 +46,8 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     # This command queries (U)SIM card insertion status or determines whether
     # (U)SIM card insertion status report is enabled.
     modem_helper.automate_com(ser, file, "AT+QSIMSTAT?")
+    modem_helper.automate_com(ser, file, "AT+QSIMSTAT=0")
+
 
 
     # This command queries the slot currently used by the (U)SIM and

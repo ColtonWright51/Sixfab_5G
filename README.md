@@ -18,7 +18,7 @@ AT+QSIMSTAT=0
 AT+QUIMSLOT=1
 ```
 
-Then insert the (U)SIM and restart the modem by flipping the Full Card Power (FCP) switch of OFF for 10 seconds. Run the command:
+Then insert the (U)SIM and restart the modem by flipping the Full Card Power (FCP) switch to OFF for 10 seconds. Run the command:
 
 ```
 AT+QINISTAT
