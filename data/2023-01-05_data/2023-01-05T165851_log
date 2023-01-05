@@ -1,0 +1,45 @@
+prog8.py
+========================================
+ATE1
+OK
+ATI
+Quectel
+RM502Q-AE
+Revision: RM502QAEAAR11A04M4G
+
+OK
+AT+GSN
+867826050652544
+
+OK
+AT+CFUN?
++CFUN: 1
+
+OK
+AT+QINISTAT
++QINISTAT: 7
+
+OK
+AT+CIMI
+310410371424254
+
+OK
+AT+CPIN?
++CPIN: READY
+
+OK
+AT+QPINC?
++QPINC: "SC",3,10
++QPINC: "P2",3,10
+
+OK
+ATD740;
+NO CARRIER
+AT+COPS?
++COPS: 0
+
+OK
+AT+CSMS=?
++CSMS: (0,1)
+
+OK
