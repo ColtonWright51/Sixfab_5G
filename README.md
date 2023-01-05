@@ -3,11 +3,11 @@ Testing for the Sixfab Raspberry Pi 5G Development Kit.
 
 Can communicate to the Quectel RM502Q-AE modem through python script prog1.py
 
-## AT Commands
+### AT Commands
 
 Every command you ever send to the modem must start with AT and end with a carriage return, '\r' in python. Each command also has a maximum response time of at least 300 ms, so this amount of time must elapse before another command is sent.
 
-## (U)SIM Detection
+### (U)SIM Detection
 To detect the (U)SIM card for this Sixfab board, you must disable all Hot-Plug commands and restart the modem with the (U)SIM inserted. Make sure these commands are sent before restart:
 
 ```
