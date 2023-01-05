@@ -1,5 +1,6 @@
 """
 Created by Colton Wright on 1/5/2023
+
 Communicates to the Quectel RM502Q-AE modem through a serial port. The modem
 uses the standard "Hayes command set" popular with modems. Set settings
 so that the modem can detect the (U)SIM after the Full Card Power (FCP)

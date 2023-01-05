@@ -8,7 +8,7 @@ Can communicate to the Quectel RM502Q-AE modem through python script prog1.py
 Every command you ever send to the modem must start with AT and end with a carriage return, '\r' in python. Each command also has a maximum response time of at least 300 ms, so this amount of time must elapse before another command is sent.
 
 ### (U)SIM Detection
-To detect the (U)SIM card for this Sixfab board, you must disable all Hot-Plug commands and restart the modem with the (U)SIM inserted. Make sure these commands are sent before restart:
+To detect the (U)SIM card for this Sixfab board, you must disable all Hot-Plug commands and restart the modem with the (U)SIM inserted. Make sure these commands are sent before restart (`init_SIM_settings.py`):
 
 ```
 AT+QSIMDET=0,0
