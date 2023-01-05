@@ -34,3 +34,16 @@ This command should now return a 7, meaning:
 ### ModemManager
 
 As soon as your (U)SIM card is detected by your modem, and you have a serial port connection between the Sixfab card and your PC, ModemManager will take control of the 4 serial ports the modem creates. `/dev/ttyUSB0`, `/dev/ttyUSB1`, `/dev/ttyUSB2` and  `/dev/ttyUSB3` will all be busy. If you try to interact with them you'll get `/dev/ttyUSB3: Device or resource busy`
+
+To check if ModemManager is blocking comms from the modem, run the command:
+
+```
+sudo lsof | grep ttyUSB
+```
+
+If ModemManager is blocking comms, run:
+
+```
+sudo apt purge modemmanager -y
+```
+
