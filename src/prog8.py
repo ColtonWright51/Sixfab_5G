@@ -55,11 +55,21 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     modem_helper.automate_com(ser, file, "AT+QPINC?")
 
 
+    #=========================================================================
+    # So (U)SIM is inserted, serial port is open, and there are no passwords
+    # on the (U)SIM card. So let's mess with the network.
+
+    # Try to call, of course no carrier
+    modem_helper.automate_com(ser, file, "ATD740;", 5)
+
+
+    # SECTION 5 NETWORK SERVICE COMMANDS
+    
 
 
 
-
-
+    # SECTION 8 SHORT MESSAGE SERVICE COMMANDS
+    modem_helper.automate_com(ser, file, "AT+CSMS=?")
 
 
 
