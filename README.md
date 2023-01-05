@@ -30,3 +30,7 @@ This command should now return a 7, meaning:
 - PB DONE. Phonebook initialization completed.
 
 `AT+QINISTAT` can tell you that the (U)SIM is ready, but if you query if the (U)SIM is detected with `AT+QSIMDET?` it will always tell you that (U)SIM card detection is disabled and the insert level is low.
+
+### ModemManager
+
+As soon as your (U)SIM card is detected by your modem, and you have a serial port connection between the Sixfab card and your PC, ModemManager will take control of the 4 serial ports the modem creates. `/dev/ttyUSB0 /dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3` will all be busy. If you try to interact with them you'll get `/dev/ttyUSB3: Device or resource busy`
