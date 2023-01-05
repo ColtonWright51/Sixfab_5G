@@ -11,10 +11,8 @@ https://en.wikipedia.org/wiki/Hayes_command_set
 """
 
 import serial
-import os
-import datetime
-import modules.modem_helper as modem_helper
 import time
+import modules.modem_helper as modem_helper
 
 # Setup data directory & file name to save responses from modem
 log_file_path = modem_helper.make_data_file()

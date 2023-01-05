@@ -1,8 +1,8 @@
 """
-Created by Colton Wright on 1/4/2023
+Created by Colton Wright on 1/5/2023
 Communicates to the Quectel RM502Q-AE modem through a serial port. The modem
-uses the standard "Hayes command set" popular with modems. Attempt 
-initialize the (U)SIM card in the modem.
+uses the standard "Hayes command set" popular with modems. (U)SIM is
+initialized, play with the settings.
 
 https://en.wikipedia.org/wiki/Hayes_command_set
 
@@ -55,6 +55,7 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     # (U)SIM card insertion status report is enabled.
     modem_helper.automate_com(ser, file, "AT+QSIMSTAT=?")
     modem_helper.automate_com(ser, file, "AT+QSIMSTAT?")
+    modem_helper.automate_com(ser, file, "AT+QSIMSTAT=1")
 
 
 
@@ -67,6 +68,7 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     modem_helper.automate_com(ser, file, "AT+QUIMSLOT?")
     modem_helper.automate_com(ser, file, "AT+QUIMSLOT=1")
 
+    modem_helper.automate_com(ser, file, "AT+QSIMDET=1,0")
     modem_helper.automate_com(ser, file, "AT+QSIMDET?")
     modem_helper.automate_com(ser, file, "AT+QINISTAT")
 print("Runtime: " + str(time.time()-start_time))
