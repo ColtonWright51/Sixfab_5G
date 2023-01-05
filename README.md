@@ -46,4 +46,4 @@ If ModemManager is blocking comms, run:
 ```
 sudo apt purge modemmanager -y
 ```
-
+Sixfab says to also uninstall `network-manager` on the RPi 4 you're using, but I'm on ubuntu and have no problems yet.
