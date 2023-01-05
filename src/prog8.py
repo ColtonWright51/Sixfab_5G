@@ -21,6 +21,7 @@ start_time = time.time()
 with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     open(log_file_path, 'ab') as file:
 
+    file.write(b"prog8.py\n========================================\n")
 
     # All commands must start with AT or at and end with carriage return!
     modem_helper.automate_com(ser, file, "ATE1") # Enable echo
@@ -37,38 +38,29 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
 
 
 
-    # Queries the activity status of the Mobile Equipment, 0 = Ready
-    modem_helper.automate_com(ser, file, "AT+CPAS")
-
     # This command queries the initialization status of (U)SIM card.
-    modem_helper.automate_com(ser, file, "AT+QINISTAT") # Will give 0 for initial state
+    modem_helper.automate_com(ser, file, "AT+QINISTAT") # Should give 7
 
-    # This command enables (U)SIM card hot-swap function. (U)SIM card is
-    # detected by GPIO interrupt. The level of (U)SIM card detection pin
-    # should also be set when the (U)SIM card is inserted.
-    # The Sixfab board does not have hot-plug capability. They are only
-    # using a 6-pin SIM card, hot-plug requires 8 pins.
-    modem_helper.automate_com(ser, file, "AT+QSIMDET?")
+    # This command requests the International Mobile Subscriber Identity
+    # (IMSI) which is intended to permit the Terminal Equipment (TE) to 
+    # identify the individual (U)SIM card or active application in the 
+    # UICC (GSM or (U)SIM) that is attached to MT.
+    modem_helper.automate_com(ser, file, "AT+CIMI")
 
+    # Returns a string indicating whether or not a password is required.
+    # No password is required...
+    modem_helper.automate_com(ser, file, "AT+CPIN?")
 
-    # This command queries (U)SIM card insertion status or determines whether
-    # (U)SIM card insertion status report is enabled.
-    modem_helper.automate_com(ser, file, "AT+QSIMSTAT=?")
-    modem_helper.automate_com(ser, file, "AT+QSIMSTAT?")
-    modem_helper.automate_com(ser, file, "AT+QSIMSTAT=1")
-
+    # PIN remainder counter, should be worthless
+    modem_helper.automate_com(ser, file, "AT+QPINC?")
 
 
 
 
-    # This command queries the slot currently used by the (U)SIM and
-    # configure which to use. The RM502Q-AE is definitely wired to use
-    # the (U)SIM 1 slot, (U)SIM 2 is not hooked up for this modem
-    modem_helper.automate_com(ser, file, "AT+QUIMSLOT=?")
-    modem_helper.automate_com(ser, file, "AT+QUIMSLOT?")
-    modem_helper.automate_com(ser, file, "AT+QUIMSLOT=1")
 
-    modem_helper.automate_com(ser, file, "AT+QSIMDET=1,0")
-    modem_helper.automate_com(ser, file, "AT+QSIMDET?")
-    modem_helper.automate_com(ser, file, "AT+QINISTAT")
+
+
+
+
+
 print("Runtime: " + str(time.time()-start_time))

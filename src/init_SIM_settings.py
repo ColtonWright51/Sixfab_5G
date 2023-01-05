@@ -23,6 +23,9 @@ start_time = time.time()
 with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     open(log_file_path, 'ab') as file:
 
+
+    file.write(b"init_SIM_settings.py\n========================================\n")
+
     # Turn off (U)SIM Hot-Plug detection
     modem_helper.automate_com(ser, file, "AT+QSIMDET=0,0")
 

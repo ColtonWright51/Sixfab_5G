@@ -23,6 +23,7 @@ start_time = time.time()
 with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     open(log_file_path, 'ab') as file:
 
+    file.write(b"prog7.py\n========================================\n")
 
     # All commands must start with AT or at and end with carriage return!
     modem_helper.automate_com(ser, file, "ATE1") # Enable echo
