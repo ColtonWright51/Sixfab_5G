@@ -1,0 +1,33 @@
+prog8.py
+========================================
+
+RDY
+ATE1
+OK
+AT+QINISTAT
++QINISTAT: 7
+
+OK
+AT+CIMI
+310410371424254
+
+OK
+AT+CPIN?
++CPIN: READY
+
+OK
+AT+QPINC?
++QPINC: "SC",3,10
++QPINC: "P2",3,10
+
+OK
+ATD740;
+NO CARRIER
+AT+QNWINFO
++QNWINFO: No Service
+
+OK
+AT+CSMS=?
++CSMS: (0,1)
+
+OK

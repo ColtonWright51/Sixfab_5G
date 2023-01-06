@@ -64,8 +64,9 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
 
 
     # SECTION 5 NETWORK SERVICE COMMANDS
-    modem_helper.automate_com(ser, file, "AT+COPS=?", 180)
-
+    # modem_helper.automate_com(ser, file, "AT+COPS=?", 180)
+    modem_helper.automate_com(ser, file, "AT+QNWINFO")
+    modem_helper.automate_com(ser, file, "AT+CSQ")
 
 
     # SECTION 8 SHORT MESSAGE SERVICE COMMANDS
