@@ -1,0 +1,22 @@
+prog9.py
+========================================
+ATE1
+OK
+AT+CSMS=?
++CSMS: (0,1)
+
+OK
+AT+C5GNSSAIRDP=?
++C5GNSSAIRDP: (0-3),(00101-999999)
+
+
+OK
+AT+QENG=?
++QENG: ("servingcell","neighbourcell")
+
+OK
+AT+QSCAN=?
++QSCAN: (1-3)
+
+OK
+AT+QSCAN=3,1

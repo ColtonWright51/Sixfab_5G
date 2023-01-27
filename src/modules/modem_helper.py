@@ -10,7 +10,7 @@ def make_data_file():
     os.makedirs(data_path, exist_ok=True)
     now = datetime.datetime.today()
     now = now.strftime("%Y-%m-%dT%H%M%S")
-    log_file_path = os.path.join(data_path, now+"_log")
+    log_file_path = os.path.join(data_path, now+"_log.txt")
     return(log_file_path)
 
 def automate_test_read(ser, file, command, is_read_com=True, t_sleep=0.3):

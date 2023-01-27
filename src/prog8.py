@@ -72,6 +72,10 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     # SECTION 8 SHORT MESSAGE SERVICE COMMANDS
     modem_helper.automate_com(ser, file, "AT+CSMS=?")
 
+    modem_helper.automate_com(ser, file, "AT+C5GNSSAIRDP=?")
+
+    modem_helper.automate_com(ser, file, "AT+QENG=?")
+
 
 
 print("Runtime: " + str(time.time()-start_time))
