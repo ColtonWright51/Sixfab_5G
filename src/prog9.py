@@ -30,12 +30,30 @@ with serial.Serial('/dev/ttyUSB3', baudrate=115200, timeout=1) as ser, \
     # modem_helper.automate_com(ser, file, "AT+C5GNSSAIRDP=?")
     modem_helper.automate_com(ser, file, "AT+QENG=?") # List of supported <cell_type>s
     modem_helper.automate_com(ser, file, "AT+QSCAN=?") # range of supported <modes>s
+    
     # modem_helper.automate_com(ser, file, "AT+QSCAN=3,1", 180)
-    # modem_helper.automate_com(ser,file, "AT+COPS=?", 180)
+
     modem_helper.automate_com(ser, file, "AT+CGDCONT=?")
     modem_helper.automate_com(ser, file, "AT+CGDCONT?")
-    modem_helper.automate_com(ser, file, "AT+CGDCONT=1,\"IPV4V6\",\"srsapn\"")
+    modem_helper.automate_com(ser, file, "AT+CGDCONT=4,\"IPV4V6\",\"srsapn\"")
+    modem_helper.automate_com(ser, file, "AT+QGETCAPABILITY?")
+    modem_helper.automate_com(ser, file, "AT+CPOL?")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     modem_helper.automate_com(ser,file, "AT+COPS=?", 180)
-
-
 print("Runtime: " + str(time.time()-start_time))

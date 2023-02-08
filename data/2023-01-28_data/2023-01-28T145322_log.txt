@@ -1,0 +1,52 @@
+prog9.py
+========================================
+
++COPS: (1,"AT&T","AT&T","310410",7),(1,"Verizon","Verizon","311480",7),(1,"T-Mobile","T-Mobile","310260",7),(1,"311 490","311 490","311490",7),(1,"FirstNet","FirstNet","313100",7),,(0-4),(0-2)
+
+OK
+ATE1
+OK
+AT+CIMI
+310410371424254
+
+OK
+AT+CSMS=?
++CSMS: (0,1)
+
+OK
+AT+QENG=?
++QENG: ("servingcell","neighbourcell")
+
+OK
+AT+QSCAN=?
++QSCAN: (1-3)
+
+OK
+AT+CGDCONT=?
++CGDCONT: (1-42),"IP",,,(0-3),(0-4),(0-1),(0-1),,,,,,,,,(0-1),,(0-1),,,(0-1)
++CGDCONT: (1-42),"PPP",,,(0-3),(0-4),(0-1),(0-1),,,,,,,,,(0-1),,(0-1),,,(0-1)
++CGDCONT: (1-42),"IPV6",,,(0-3),(0-4),(0-1),(0-1),,,,,,,,,(0-1),,(0-1),,,(0-1)
++CGDCONT: (1-42),"IPV4V6",,,(0-3),(0-4),(0-1),(0-1),,,,,,,,,(0-1),,(0-1),,,(0-1)
+
+OK
+AT+CGDCONT?
++CGDCONT: 1,"IPV4V6","srsapn","0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0",0,0,0,0,,,,,,,,,"",,,,0
++CGDCONT: 2,"IPV4V6","ims","0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0",0,0,0,0,,,,,,,,,"",,,,0
++CGDCONT: 3,"IPV4V6","SOS","0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0",0,0,0,1,,,,,,,,,"",,,,0
++CGDCONT: 4,"IPV4V6","srsapn","0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0",0,0,0,0,,,,,,,,,"",,,,0
+
+OK
+AT+CGDCONT=4,"IPV4V6","srsapn"
+OK
+AT+QGETCAPABILITY?
++QGETCAPABILITY:NR:n1,n2,n3,n5,n7,n8,n12,n20,n25,n28,n38,n40,n41,n48,n66,n71,n77,n78,n79
++QGETCAPABILITY:LTE-FDD:B1,B2,B3,B4,B5,B7,B8,B12,B13,B14,B18,B19,B20,B25,B26,B28,B29,B30,B32,B66,B71
++QGETCAPABILITY:LTE-TDD:B34,B38,B39,B40,B41,B42,B43,B46,B48
++QGETCAPABILITY:WCDMA:B1,B2,B3,B4,B5,B6,B8,B19
++QGETCAPABILITY:LTE-CATEGORY:CAT16
++QGETCAPABILITY:LTE-CA:1
+
+OK
+AT+CPOL?
++CME ERROR: 3
+AT+COPS=?

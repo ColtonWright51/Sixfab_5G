@@ -32,4 +32,9 @@ def automate_com(ser, file, command, t_sleep=0.3):
     bin_command = command.encode("ascii")
     ser.write(bin_command + b"\r")
     time.sleep(t_sleep)
+    start = time.time()
+    while ((time.time() - start) < t_sleep):
+        file.write(ser.read(ser.in_waiting))
+        time.sleep(.1)
+
     file.write(ser.read(ser.in_waiting))
